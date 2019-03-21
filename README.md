@@ -1,2 +1,3 @@
-# 404-portal
-The portal template - Instance of Django
+# Sistema de Gerenciamento de Portais de Graduação
+## Portal - Team 404
+O Portal, o template de uma instância.
