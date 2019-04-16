@@ -1,3 +1,9 @@
+.base {
+    font-family: 'Annie Use Your Telescope';
+    font-size: 22px;
+    font-weight: bold;
+}
+
 .navbar {
     background-color: #9197ce;
 }
@@ -5,10 +11,18 @@
 .navbar a {
     text-decoration: none;
     color: white;
+    font-size: 22px;
 }
 
 .navbar img {
     width: 50;
     height: 50;
     align-content: top;
+}
+
+footer {
+    color: white;
+    height: 50;
+    background-color: #9197ce;
+    text-align: center;
 }
