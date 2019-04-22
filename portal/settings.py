@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'backend.core',
     'backend.noticias',
+    'backend.eventos',
 ]
 
 MIDDLEWARE = [
