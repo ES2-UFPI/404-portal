@@ -1,8 +1,8 @@
 from django.forms import ModelForm
-from .models import Noticia
+from .models import Evento
 
 
-class NoticiaForm(ModelForm):
+class EventoForm(ModelForm):
     class Meta:
-        model = Noticia
+        model = Evento
         exclude = ('data_publicacao',)
