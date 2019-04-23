@@ -2,13 +2,13 @@ from django.db import models
 
 
 class Portal:
-	email = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
     nome_solicitante = models.CharField(max_length=255)
     cpf_solicitante = models.CharField(max_length=11)
     email_solicitante = models.CharField(max_length=100)
     telefone_solicitante = models.CharField(max_length=14)
     celular_solicitante = models.CharField(max_length=14)
-	universidade = models.CharField(max_length=255)
+    universidade = models.CharField(max_length=255)
     departamento = models.CharField(max_length=255)
     area_conhecimento = models.CharField(max_length=100)
     nome_do_curso = models.CharField(max_length=255)
