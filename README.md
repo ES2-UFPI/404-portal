@@ -1,3 +1,4 @@
+
 ## Sistema de Gerenciamento de Portais de Graduação - Portal
 
 [Demo](https://plataformasuniversitarias.github.io/)  ·  [Reportar Bug](https://github.com/ES2-UFPI/404-portal/issues)
@@ -5,10 +6,10 @@
 ## Tabela de Conteúdos
 
 -   [Sobre o Projeto](https://github.com/ES2-UFPI/404-portal#sobre-o-projeto)
-   -   [Feito com](https://github.com/ES2-UFPI/404-portal#feito-com)
+	-   [Feito com](https://github.com/ES2-UFPI/404-portal#feito-com)
 -   [Introdução](https://github.com/ES2-UFPI/404-portal#introdu%C3%A7%C3%A3o)
-   -   [Pré-requisitos](https://github.com/ES2-UFPI/404-portal#pr%C3%A9-requisitos)
-   -   [Instalação](https://github.com/ES2-UFPI/404-portal#instala%C3%A7%C3%A3o)
+	   -   [Pré-requisitos](https://github.com/ES2-UFPI/404-portal#pr%C3%A9-requisitos)
+	   -   [Instalação](https://github.com/ES2-UFPI/404-portal#instala%C3%A7%C3%A3o)
 -   [Uso](https://github.com/ES2-UFPI/404-portal#uso)
 -   [Contribuição](https://github.com/ES2-UFPI/404-portal#contribuindo)
 -   [Licença](https://github.com/ES2-UFPI/404-portal#licen%C3%A7a)
