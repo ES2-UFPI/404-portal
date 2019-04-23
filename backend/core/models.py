@@ -1,23 +1,11 @@
 from django.db import models
 
-
-class user (model.Model):
-	nome = model.CharField(max length = 100)
-	curso = ForeignKey('curso',on_delete = models.CASCADE)
-	email = model.EmailField(max length = 100)
-
 class admin (model.Model):
 	nome = model.CharField(max length = 100)
-	curso = ForeignKey('curso',on_delete = models.CASCADE)
 	email = model.EmailField(max length = 100)
 	cpf = model.CharField(max length = 12)
-	telefone1 = model.CharField(max length = 10)
+	celular = model.CharField(max length = 10)
 	telefone2 = model.CharField(max length = 10)
-
-class moderador (model.Model):
-	nome = model.CharField(max length = 100)
-	curso = ForeignKey('curso',on_delete = models.CASCADE)
-	email = model.EmailField(max length = 100)
 
 class curso (model.Model):
 	nome = model.CharField(max length = 100)
@@ -35,11 +23,3 @@ class curso (model.Model):
 	email = model.EmailField(max length = 100)
 	telefone1 = model.CharField(max length = 10)
 	telefone2 = model.CharField(max length = 10)
-
-
-
-
-
-
-
-
