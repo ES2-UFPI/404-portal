@@ -4,15 +4,15 @@
 
 ## Tabela de Conteúdos
 
--   [Sobre o Projeto]()
-   -   [Feito com]()
--   [Introdução]()
-   -   [Pré-requisitos]()
-   -   [Instalação]()
--   [Uso]()
--   [Contribuição]()
--   [Licença]()
--   [Contato]()
+-   [Sobre o Projeto](https://github.com/ES2-UFPI/404-portal#sobre-o-projeto)
+   -   [Feito com](https://github.com/ES2-UFPI/404-portal#feito-com)
+-   [Introdução](https://github.com/ES2-UFPI/404-portal#introdu%C3%A7%C3%A3o)
+   -   [Pré-requisitos](https://github.com/ES2-UFPI/404-portal#pr%C3%A9-requisitos)
+   -   [Instalação](https://github.com/ES2-UFPI/404-portal#instala%C3%A7%C3%A3o)
+-   [Uso](https://github.com/ES2-UFPI/404-portal#uso)
+-   [Contribuição](https://github.com/ES2-UFPI/404-portal#contribuindo)
+-   [Licença](https://github.com/ES2-UFPI/404-portal#licen%C3%A7a)
+-   [Contato](https://github.com/ES2-UFPI/404-portal#contato)
 
 ## Sobre o Projeto
 
@@ -41,7 +41,7 @@ Nós disponibilizamos um tutorial de instalação neste [link](https://github.co
 
 É possível ver o Portal em funcionamento executando o seguinte comando no diretório raiz do projeto:
 
-$ python manage.py runserver
+```$ python manage.py runserver```
 
 ## Contribuindo
 
