@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'backend.noticias',
     'backend.eventos',
     'backend.laboratorios',
+    'backend.salas',
 ]
 
 MIDDLEWARE = [
