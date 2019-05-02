@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'backend.core',
     'backend.noticias',
     'backend.eventos',
+    'backend.feedbacks',
 ]
 
 MIDDLEWARE = [
@@ -37,7 +38,7 @@ ROOT_URLCONF = 'portal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/felipe/Felipe/dev/es2/404-portal/frontend/templates'],
+        'DIRS': ['./frontend/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

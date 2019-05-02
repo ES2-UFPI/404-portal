@@ -6,4 +6,5 @@ urlpatterns = [
     path('', include('backend.core.urls')),
     path('noticias/', include('backend.noticias.urls')),
     path('eventos/', include('backend.eventos.urls')),
+    path('feedbacks/', include('backend.feedbacks.urls')),
 ]
