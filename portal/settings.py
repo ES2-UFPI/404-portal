@@ -17,6 +17,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap4',
+    'simple_history',
     'backend.core',
     'backend.noticias',
     'backend.eventos',
@@ -39,7 +41,7 @@ ROOT_URLCONF = 'portal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/felipe/Felipe/dev/es2/404-portal/frontend/templates'],
+        'DIRS': ['{}/frontend/templates'.format(BASE_DIR)],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
