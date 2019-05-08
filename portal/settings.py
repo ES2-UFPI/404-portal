@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'backend.eventos',
     'backend.laboratorios',
     'backend.salas',
+    'backend.reservas',
 ]
 
 MIDDLEWARE = [
