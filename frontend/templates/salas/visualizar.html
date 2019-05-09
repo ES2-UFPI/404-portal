@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <h1>{{sala.numero}}</h1>
+    <p>{{sala.capacidade}}</p>
+    {% if sala.reservada %}
+        <p>Reservado por: {{sala.reservada_por}}</p>
+    {% else %}
+        <p>Livre</p>
+    {% endif %}
+</div>
+
+{% endblock %}

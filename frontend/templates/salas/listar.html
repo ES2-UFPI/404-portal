@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="text-align:center; margin: 0px 0 10 0px;">
+    <a href = "{% url 'salas:cadastrar' %}">Nova Sala</a>
+</div>
+
+{% for sala in salas %}
+    <h2><a href = "{% url 'salas:visualizar' id=sala.id%}">{{ sala.numero }}</a></h2>
+    <p>{{ sala.capacidade }}</p>
+    
+    {% if sala.reservada %}
+        <p>Reservado por: {{sala.reservada_por}}</p>
+    {% else %}
+        <p>Livre</p>
+    {% endif %}
+    
+    <a href = "{% url 'salas:editar' id=sala.id %}">Editar</a>
+    <a href = "{% url 'salas:remover' id=sala.id %}">Remover</a>
+{% endfor %}
+
+{% endblock %}
