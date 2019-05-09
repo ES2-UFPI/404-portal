@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+		{% for mapa in mapas %}
+		    <div>
+			   <h3>{{mapa.nome}}</h3>
+			   <img src="https://maps.googleapis.com/maps/api/staticmap?center={{mapa.latitude}},{{mapa.longitude}}&zoom=18&size=800x400&maptype=roadmap&markers=color:red|{{mapa.latitude}},{{mapa.longitude}}&key=AIzaSyDU9RNIAWlhxNE5sixMutrwcyxGBU4z9Bs">
+		    </div>
+		{% endfor %}
+	</body>
+</html>
+{% endblock %}
