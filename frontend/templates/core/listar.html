@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for portal in portais %}
+<div class="card text-center">
+  <div class="card-header">
+    <a href = "{% url 'core:visualizar' id=portal.id %}">{{ portal.nome_do_curso }}</a>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ portal.universidade }}</h5>
+    <p class="card-text">{{ portal.departamento }}</p>
+    <a href="{% url 'core:editar' id=portal.id %}" class="btn btn-warning">Editar</a>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

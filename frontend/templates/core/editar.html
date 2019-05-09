@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load bootstrap4 %}
+<h1 class="title">Graduação</h1>
+<div class="container">
+  <form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-warning">Salvar</button>
+    <div class="row">
+      <div class="col-lg-6">
+        <h3 class="title">Informações do Curso</h3>
+        {% for field in form.visible_fields|slice:"1:6" %}
+        {% bootstrap_field field %}
+        {% endfor %}
+      </div>
+      <div class="col-lg-6">
+        <h3 class="title">Endereço e Contato</h3>
+        {% for field in form.visible_fields|slice:"6:14" %}
+        {% bootstrap_field field %}
+        {% endfor %}
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
