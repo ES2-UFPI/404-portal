@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="text-align:center; margin: 0px 0 10 0px;">
+    <a href = "{% url 'user:cadastrar' %}">Novo Usuário</a>
+</div>
+
+{% for user in users %}
+<h2><a href = "{% url 'user:visualizar' id=user.id %}">{{ user.first_name }} {{ user.last_name }}</a></h2>
+    <p>{{ user.username }}</p>
+    <p>{{ user.email }}</p>
+
+    <a href = "{% url 'user:remover' id=user.id %}">Remover</a>
+{% endfor %}
+
+{% endblock %}
