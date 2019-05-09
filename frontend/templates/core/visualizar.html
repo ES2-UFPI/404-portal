@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{ portal.nome_do_curso }}</h1>
+    <p class="lead">{{ portal.universidade }}</p>
+    <p class="lead">Departamento: {{ portal.departamento }}</p>
+    <p class="lead">Área de Conhecimento: {{ portal.area_conhecimento }}</p>
+    <p class="lead">Coordenadoria: {{ portal.nome_do_coordenador }}</p>
+    <p class="lead">Chefia do Departamento: {{ portal.nome_do_chefe_departamento }}</p>
+    <p class="lead">Cidade: {{ portal.cidade }} - Estado: {{ portal.estado }}</p>
+    <p class="lead">Endereço: {{ portal.rua }}, {{ portal.bairro }}, Nº {{ portal.numero }} - CEP: {{ portal.cep }}</p>
+    <p class="lead">Contato: {{ portal.telefone_1 }} - {{ portal.telefone_2 }}</p>
+  </div>
+</div>
+{% endblock %}
