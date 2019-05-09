@@ -9,4 +9,5 @@ urlpatterns = [
     path('laboratorios/', include('backend.laboratorios.urls')),
     path('salas/', include('backend.salas.urls')),
     path('reservas/', include('backend.reservas.urls')),
+    path('usuarios/', include('backend.user.urls')),
 ]
