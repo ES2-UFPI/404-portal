@@ -1,7 +1,7 @@
 language: python
 
 python:
-  - "3.7.3"
+  - "3.4"
 
 services:
   - postgresql
@@ -43,6 +43,5 @@ before_script:
   - python manage.py migrate
 
 script:
-  - python manage.py migrate
   - python manage.py test homebrewdatabase.tests
   - python manage.py test functional_tests
