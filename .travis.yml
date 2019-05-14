@@ -4,7 +4,7 @@ python:
   - "3.6"
 
 addons:
-  - postgresql: "10"
+  postgresql: "11"
 
 branches:
   only:
