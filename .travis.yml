@@ -13,7 +13,7 @@ addons:
 env:
 - DJANGO=2.2
   global:
-  - PGPORT=5433
+  - PGPORT=5432
 
 branches:
   only:
@@ -43,3 +43,4 @@ before_script:
 
 script:
   - python manage.py test
+  
