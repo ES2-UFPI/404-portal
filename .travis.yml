@@ -8,6 +8,7 @@ addons:
 
 branches:
   only:
+    - gabriel#35
     - dev
     - master
 
