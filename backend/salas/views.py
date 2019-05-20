@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Sala
 from .forms import SalaForm
+from ..mapas.models import Mapa
 
 def listar(request):
     salas = Sala.objects.all()
@@ -16,8 +17,10 @@ def cadastrar(request):
     if request.method == "POST":
         form = SalaForm(request.POST)
         if form.is_valid():
-            form.save()
-
+            sala = form.save(commit=False)
+            local = Mapa.objects.create(nome = 'Mapa da Sala: ' + str(sala.numero), latitude = sala.latitude, longitude = sala.longitude)
+            sala.local = local
+            sala.save()
             return redirect('salas:listar')
     else:
          form = SalaForm()
