@@ -5,4 +5,4 @@ from .models import Sala
 class SalaForm(ModelForm):
     class Meta:
         model = Sala
-        fields = '__all__'
+        fields = ('numero', 'capacidade', 'reservada', 'reservada_por','latitude','longitude')
