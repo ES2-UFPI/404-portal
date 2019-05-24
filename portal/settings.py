@@ -17,10 +17,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap4',
+    'simple_history',
     'backend.core',
     'backend.noticias',
     'backend.eventos',
     'backend.feedbacks',
+    'backend.laboratorios',
+    'backend.salas',
+    'backend.reservas',
 ]
 
 MIDDLEWARE = [
@@ -38,7 +43,11 @@ ROOT_URLCONF = 'portal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': ['./frontend/templates'],
+=======
+        'DIRS': ['{}/frontend/templates'.format(BASE_DIR)],
+>>>>>>> dev
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

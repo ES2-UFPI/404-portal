@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Avaliar reserva</h2>
+<form method = "POST">
+    {% csrf_token %}
+    Aceitar: <input type="checkbox" name="aceita" id="aceita">
+    Comentario: <input type="text" name="comentario" id="comentario">
+    
+    <button>Salvar</button>
+</form>
+
+{% endblock %}

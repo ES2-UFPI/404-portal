@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="text-align:center; margin: 0px 0 10 0px;">
+    <a href = "{% url 'laboratorios:cadastrar' %}">Novo Laboratório</a>
+</div>
+
+{% for lab in laboratorios %}
+    <h2><a href = "{% url 'laboratorios:visualizar' id=lab.id%} ">{{ lab.nome }}</a></h2>
+    <p>{{ lab.capacidade }}</p>
+    <p>{{ lab.responsavel }}</p>
+    
+    {% if lab.reservado %}
+        <p>Reservado por: {{lab.reservado_por}}</p>
+    {% else %}
+        <p>Livre</p>
+    {% endif %}
+    
+    <a href = "{% url 'laboratorios:editar' id=lab.id %}">Editar</a>
+    <a href = "{% url 'laboratorios:remover' id=lab.id %}">Remover</a>
+{% endfor %}
+
+{% endblock %}

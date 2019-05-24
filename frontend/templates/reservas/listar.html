@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="text-align:center; margin: 0px 0 10 0px;">
+    <a href = "{% url 'reservas:cadastrar' %}">Nova Reserva</a>
+</div>
+
+{% for reserva in reservas %}
+    <h2><a href = "">{{ reserva.laboratorio.nome }}</a></h2>
+    <p>Solicitante: {{ reserva.solicitante }}</p>
+    <p>Justificativa: {{ reserva.justificativa }}</p>
+    
+    {% if reserva.avaliada %}
+        {% if reserva.aceita %}
+            <p>Aceita por: {{reserva.avaliada_por}}</p>
+            <p>Comentario: {{reserva.comentario}}</p>
+        {% else %}
+            <p>Recusada por: {{reserva.avaliada_por}}</p>
+            <p>Comentario: {{reserva.comentario}}</p>
+        {% endif %}
+    {% else %}
+        <p>Pendente</p>
+    {% endif %}
+    
+    <a href = "{% url 'reservas:avaliar' id=reserva.id %}">Avaliar</a>
+    <a href = "{% url 'reservas:visualizar' id=reserva.id %}">Ver Reserva</a>
+    <a href = "{% url 'reservas:editar' id=reserva.id %}">Editar</a>
+    <a href = "{% url 'reservas:remover' id=reserva.id %}">Remover</a>
+{% endfor %}
+
+{% endblock %}
