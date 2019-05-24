@@ -1,27 +1,22 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
-<div>
-    <h1>{{reserva.laboratorio.nome}}</h1>
-    <p>{{reserva.solicitante}}</p>
-    <p>{{reserva.data_hora_criacao}}</p>
-</div>
-<div>
-    <p>{{reserva.data_hora_reserva}}</p>
-    <p>{{reserva.justificativa}}</p>
-</div>
-
-{% if reserva.avaliada %}
-    {% if reserva.aceita %}
-        <p>Aceita por: {{reserva.avaliada_por}}</p>
-        <p>Comentario: {{reserva.comentario}}</p>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h3>Hora da Reserva: {{reserva.data_hora_reserva}}</h3>
+    <p class="lead">Laboratório: {{reserva.laboratorio.nome}}</p>
+    <p class="lead">Sala: {{reserva.sala.nome}}</p>
+    <p class="lead">Solicitante: {{ reserva.solicitante }}</p>
+    <p class="lead">Justificativa: {{reserva.justificativa}}</p>
+    {% if reserva.avaliada %}
+      {% if reserva.aceita %}
+        <p class="lead">Aceita por: {{reserva.avaliada_por}}</p>
+      {% else %}
+        <p class="lead">Recusada por: {{reserva.avaliada_por}}</p>
+      {% endif %}
+      <p class="lead">Comentario: {{reserva.comentario}}</p>
     {% else %}
-        <p>Recusada por: {{reserva.avaliada_por}}</p>
-        <p>Comentario: {{reserva.comentario}}</p>
+      <p class="lead">Pendente</p>
     {% endif %}
-{% else %}
-    <p>Pendente</p>
-{% endif %}
-
+  </div>
+</div>
 {% endblock %}
