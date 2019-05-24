@@ -43,11 +43,7 @@ ROOT_URLCONF = 'portal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
-        'DIRS': ['./frontend/templates'],
-=======
         'DIRS': ['{}/frontend/templates'.format(BASE_DIR)],
->>>>>>> dev
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
