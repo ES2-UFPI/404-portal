@@ -3,6 +3,6 @@ from .models import Sala
 
 
 class SalaForm(ModelForm):
-    class Meta:
-        model = Sala
-        fields = '__all__'
+  class Meta:
+    model = Sala
+    fields = '__all__'

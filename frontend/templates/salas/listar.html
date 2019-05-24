@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-<div style="text-align:center; margin: 0px 0 10 0px;">
-    <a href = "{% url 'salas:cadastrar' %}">Nova Sala</a>
-</div>
+<a href = "{% url 'salas:cadastrar' %}">
+  <center><button type="button" class="btn btn-warning btn-lg btn-block">Nova Sala</button></center>
+</a>
 
 {% for sala in salas %}
-    <h2><a href = "{% url 'salas:visualizar' id=sala.id%}">{{ sala.numero }}</a></h2>
-    <p>{{ sala.capacidade }}</p>
-    
+<div class="card text-center">
+  <div class="card-body">
+    <a href = "{% url 'salas:visualizar' id=sala.id%}"><h4 class="card-title">{{ sala.numero }}</h4></a>
+    <p class="card-text">Capacidade: {{ sala.capacidade }}</p>
     {% if sala.reservada %}
-        <p>Reservado por: {{sala.reservada_por}}</p>
+      <p class="card-text">Reservada por: {{sala.reservada_por}}</p>
     {% else %}
-        <p>Livre</p>
+      <p class="card-text">Sala Disponível</p>
     {% endif %}
-    
-    <a href = "{% url 'salas:editar' id=sala.id %}">Editar</a>
-    <a href = "{% url 'salas:remover' id=sala.id %}">Remover</a>
+    <a href="{% url 'salas:editar' id=sala.id %}" class="btn btn-warning">Editar</a>
+    <a href="{% url 'salas:remover' id=sala.id %}" class="btn btn-warning">Remover</a>
+  </div>
+</div>
 {% endfor %}
-
 {% endblock %}

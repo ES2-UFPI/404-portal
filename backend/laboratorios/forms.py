@@ -3,6 +3,6 @@ from .models import Laboratorio
 
 
 class LaboratorioForm(ModelForm):
-    class Meta:
-        model = Laboratorio
-        fields = '__all__'
+  class Meta:
+    model = Laboratorio
+    fields = '__all__'
