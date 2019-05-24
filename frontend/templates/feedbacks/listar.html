@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="text-align:center; margin: 0px 0 10 0px;">
+    <a href = "{% url 'feedbacks:cadastrar' %}">Mandar Feedback</a>
+</div>
+
+{% for feedback in feedbacks %}
+    <h2><a href = "{% url 'feedbacks:visualizar' id=feedback.id %}">{{ feedback.assunto }}</a></h2>
+    <p>{{ feedback.descricao }}</p>
+    <p>{{ feedback.data_criacao }}</p>
+    <a href = "{% url 'feedbacks:editar' id=feedback.id %}">Editar</a>
+    <a href = "{% url 'feedbacks:remover' id=feedback.id %}">Remover</a>
+{% endfor %}
+
+{% endblock %}

@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'backend.core',
     'backend.noticias',
     'backend.eventos',
+    'backend.feedbacks',
     'backend.laboratorios',
     'backend.salas',
     'backend.reservas',
