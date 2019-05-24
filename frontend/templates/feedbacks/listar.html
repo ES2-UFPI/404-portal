@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-<div style="text-align:center; margin: 0px 0 10 0px;">
-    <a href = "{% url 'feedbacks:cadastrar' %}">Mandar Feedback</a>
-</div>
+<a href = "{% url 'feedbacks:cadastrar' %}">
+  <center><button type="button" class="btn btn-warning btn-lg btn-block">Postar Feedback</button></center>
+</a>
 
 {% for feedback in feedbacks %}
-    <h2><a href = "{% url 'feedbacks:visualizar' id=feedback.id %}">{{ feedback.assunto }}</a></h2>
-    <p>{{ feedback.descricao }}</p>
-    <p>{{ feedback.data_criacao }}</p>
-    <a href = "{% url 'feedbacks:editar' id=feedback.id %}">Editar</a>
-    <a href = "{% url 'feedbacks:remover' id=feedback.id %}">Remover</a>
+<div class="card text-center">
+  <div class="card-body">
+    <a href = "{% url 'feedbacks:visualizar' id=feedback.id %}"><h4 class="card-title">Assunto: {{ feedback.assunto }}</h4></a>
+    <p class="card-text">Data: {{ feedback.data_criacao }}</p>
+    <a href="{% url 'feedbacks:editar' id=feedback.id %}" class="btn btn-warning">Editar</a>
+    <a href="{% url 'feedbacks:remover' id=feedback.id %}" class="btn btn-warning">Remover</a>
+  </div>
+</div>
 {% endfor %}
-
 {% endblock %}
