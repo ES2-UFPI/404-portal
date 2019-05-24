@@ -1,14 +1,11 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
-<div>
-    <h1>{{noticia.titulo}}</h1>
-    <p>{{noticia.subtitulo}}</p>
-    <small>{{noticia.data_criacao}}</small>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{noticia.titulo}}</h1>
+    <p class="lead">{{noticia.subtitulo}}</p>
+    <p class="lead">{{noticia.data_criacao}}</p>
+    <p class="lead">{{noticia.conteudo}}</p>
+  </div>
 </div>
-<div>
-    <p>{{noticia.conteudo}}</p>
-</div>
-
 {% endblock %}
