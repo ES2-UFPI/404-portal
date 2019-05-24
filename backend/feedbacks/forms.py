@@ -3,6 +3,6 @@ from .models import Feedback
 
 
 class FeedbackForm(ModelForm):
-    class Meta:
-        model = Feedback
-        exclude = ('data_criacao',)
+  class Meta:
+    model = Feedback
+    exclude = ('data_criacao',)
