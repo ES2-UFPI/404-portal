@@ -6,4 +6,5 @@ django-model-utils==3.1.2
 django-simple-history==2.7.2
 django-bootstrap4==0.0.8
 ipdb==0.12
-Pillow==6.0.0
+gunicorn==19.9.0
+whitenoise==3.3.1

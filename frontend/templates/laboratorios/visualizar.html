@@ -1,16 +1,15 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
-<div>
-    <h1>{{laboratorio.nome}}</h1>
-    <p>{{laboratorio.responsavel}}</p>
-    <p>{{laboratorio.capacidade}}</p>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{laboratorio.nome}}</h1>
+    <p class="lead">Responsável: {{laboratorio.responsavel}}</p>
+    <p class="lead">Capacidade: {{laboratorio.capacidade}}</p>
     {% if laboratorio.reservado %}
-        <p>Reservado por: {{laboratorio.reservado_por}}</p>
+      <p class="lead">Reservado por: {{laboratorio.reservado_por}}</p>
     {% else %}
-        <p>Livre</p>
+      <p class="lead">Laboratório Disponível</p>
     {% endif %}
+  </div>
 </div>
-
 {% endblock %}

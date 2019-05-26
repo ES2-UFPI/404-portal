@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
-<div>
-    <h1>{{sala.numero}}</h1>
-    <p>{{sala.capacidade}}</p>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{sala.numero}}</h1>
+    <p class="lead">Capacidade: {{sala.capacidade}}</p>
     {% if sala.reservada %}
-        <p>Reservado por: {{sala.reservada_por}}</p>
+      <p class="lead">Reservada por: {{sala.reservada_por}}</p>
     {% else %}
-        <p>Livre</p>
+      <p class="lead">Sala Disponível</p>
     {% endif %}
+  </div>
 </div>
-
 {% endblock %}
