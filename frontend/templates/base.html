@@ -37,9 +37,18 @@
       </div>
       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
           <li class="nav-item ">
-            <a class="nav-link" href="{% url 'user:listar' %}"><i class="fas fa-user-cog"></i></i></a>
+              <a class="nav-link" href="{% url 'core:logout' %}">Logout</a>
           </li>
+          <li class="nav-item" sty>
+              <a class="nav-link" href="{% url 'usuarios:perfil' id=user.id %}"><i class="fas fa-user"></i></a>
+          </li>
+          {% else %}
+          <li class="nav-item ">
+              <a class="nav-link" href="{% url 'core:login' %}">Login</a>
+          </li>
+          {% endif %}
           <li class="nav-item ">
             <a class="nav-link" href="{% url 'core:listar' %}"><i class="fas fa-cog"></i></a>
           </li>

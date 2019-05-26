@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'backend.laboratorios',
     'backend.salas',
     'backend.reservas',
+    'backend.usuarios'
 ]
 
 MIDDLEWARE = [
@@ -100,3 +101,11 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/img')
+
+MEDIA_URL = 'frontend/img/'
+
+LOGIN_URL = '/login/'
+
+LOGOUT_REDIRECT_URL = '/'
