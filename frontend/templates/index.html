@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
+{% if mensagem %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Atenção! </strong>{{ mensagem }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+{% endif %}
 <center>
   <div class="container index">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">

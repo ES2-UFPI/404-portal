@@ -5,14 +5,30 @@
 <div class="container">
   <form enctype="multipart/form-data" method="post">
     {% csrf_token %}
-    <center><button type="submit" class="btn btn-warning">Salvar</button></center>
-    <div class="row">
-      <div class="col-lg-6 form-center">
-        <h3 class="title">Informações do Usuário</h3>
-        {% for field in form.visible_fields %}
-        {% bootstrap_field field %}
+
+    {% for field in form_pessoa.visible_fields %}
+      <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        {% for error in field.errors %}
+          <span class="help-block">{{ error }}</span>
         {% endfor %}
       </div>
+    {% endfor %}
+
+    {% for field in form_user.visible_fields %}
+      <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        {% for error in field.errors %}
+          <span class="help-block">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endfor %}
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-success">
+        <span class="glyphicon glyphicon-ok"></span>Salvar</button>
     </div>
   </form>
 </div>

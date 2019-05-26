@@ -11,7 +11,7 @@ except Exception as e:
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'backend.laboratorios',
     'backend.salas',
     'backend.reservas',
+    'backend.usuarios'
 ]
 
 MIDDLEWARE = [
@@ -113,3 +114,11 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/img')
+
+MEDIA_URL = 'frontend/img/'
+
+LOGIN_URL = '/login/'
+
+LOGOUT_REDIRECT_URL = '/'

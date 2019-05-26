@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1>{{ pessoa.nome }}</h1>
+    <p>Registro:{{ pessoa.registro }}</p>
+    <p>Email:{{ pessoa.email }}</p>
+    <p>Vínculo: {{ pessoa.tipo }}</p>
+    <p>Usuário: {{ pessoa.user }}</p>
+    <img src="{{ pessoa.imagem_perfil.url }}">
+  </div>
+</div>
+
+{% endblock %}
