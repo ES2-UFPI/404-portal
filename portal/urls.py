@@ -13,6 +13,7 @@ urlpatterns = [
     path('salas/', include('backend.salas.urls')),
     path('reservas/', include('backend.reservas.urls')),
     path('usuarios/', include('backend.usuarios.urls')),
+    path('mapas/',include('backend.mapas.urls'))
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+		{% for sala in salas %}
+		    <div>
+			   <h3>{{sala.local.nome}}</h3>
+			   <img src="https://maps.googleapis.com/maps/api/staticmap?center={{sala.local.latitude}},{{sala.local.longitude}}&zoom=18&size=800x400&maptype=roadmap&markers=color:red|{{sala.local.latitude}},{{sala.local.longitude}}&key=AIzaSyDU9RNIAWlhxNE5sixMutrwcyxGBU4z9Bs">
+		    </div>
+		{% endfor %}
+	</body>
+</html>
+{% endblock %}

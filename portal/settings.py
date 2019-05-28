@@ -29,7 +29,8 @@ INSTALLED_APPS = [
     'backend.laboratorios',
     'backend.salas',
     'backend.reservas',
-    'backend.usuarios'
+    'backend.usuarios',
+    'backend.mapas',
 ]
 
 MIDDLEWARE = [
