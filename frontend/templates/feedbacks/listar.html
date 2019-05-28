@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<a href = "{% url 'feedbacks:cadastrar' %}">
+  <center><button type="button" class="btn btn-warning btn-lg btn-block">Postar Feedback</button></center>
+</a>
+
+{% for feedback in feedbacks %}
+<div class="card text-center">
+  <div class="card-body">
+    <a href = "{% url 'feedbacks:visualizar' id=feedback.id %}"><h4 class="card-title">Assunto: {{ feedback.assunto }}</h4></a>
+    <p class="card-text">Data: {{ feedback.data_criacao }}</p>
+    <a href="{% url 'feedbacks:editar' id=feedback.id %}" class="btn btn-warning">Editar</a>
+    <a href="{% url 'feedbacks:remover' id=feedback.id %}" class="btn btn-warning">Remover</a>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

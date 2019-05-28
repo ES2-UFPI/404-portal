@@ -18,6 +18,10 @@ footer {
   text-align: center;
 }
 
+.form-center {
+  margin: auto;
+}
+
 .base {
     font-family: 'Annie Use Your Telescope';
     font-size: 22px;

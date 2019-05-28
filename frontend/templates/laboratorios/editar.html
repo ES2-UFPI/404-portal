@@ -1,12 +1,19 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
-<form method = "POST">
+{% load bootstrap4 %}
+<h1 class="title">Laboratório</h1>
+<div class="container">
+  <form enctype="multipart/form-data" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    
-    <button>Salvar</button>
-</form>
-
+    <center><button type="submit" class="btn btn-warning">Salvar</button></center>
+    <div class="row">
+      <div class="col-lg-9 form-center">
+        <h3 class="title">Informações de Laboratório</h3>
+        {% for field in form.visible_fields %}
+        {% bootstrap_field field %}
+        {% endfor %}
+      </div>
+    </div>
+  </form>
+</div>
 {% endblock %}

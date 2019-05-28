@@ -3,11 +3,11 @@ from .models import Reserva
 
 
 class ReservaForm(ModelForm):
-    class Meta:
-        model = Reserva
-        exclude = ('data_hora_criacao', 'solicitante', 'avaliada_por', 'avaliada', 'aceita', 'comentario')
+  class Meta:
+    model = Reserva
+    exclude = ('data_hora_criacao', 'solicitante', 'avaliada_por', 'avaliada', 'aceita', 'comentario')
 
 class AvaliarReservaForm(ModelForm):
-    class Meta:
-        model = Reserva
-        fields = ('comentario', 'aceita')
+  class Meta:
+    model = Reserva
+    fields = ('comentario', 'aceita')

@@ -2,10 +2,9 @@ from django.urls import path
 from django.contrib import admin
 from . import views
 
-app_name = 'user'
+app_name = 'usuarios'
 urlpatterns = [
     path('', views.listar, name='listar'),
-    path('<int:id>', views.visualizar, name = 'visualizar'),
+    path('<int:id>', views.perfil, name = 'perfil'),
     path('cadastrar', views.signup, name='cadastrar'),
-    path('remover/<int:id>', views.remover, name='remover'),
 ]
