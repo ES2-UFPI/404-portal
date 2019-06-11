@@ -11,12 +11,12 @@ class AuthorModelTest(TestCase):
     def test_titulo_label(self):
         noticia = Noticia.objects.get(id=1)
         field_label = noticia._meta.get_field('titulo').verbose_name
-        self.assertEquals(field_label, 'Fim do período')
+        self.assertEquals(field_label, 'titulo')
 
     def test_subtitulo_label(self):
         noticia=Noticia.objects.get(id=1)
         field_label = noticia._meta.get_field('subtitulo').verbose_name
-        self.assertEquals(field_label, 'As aulas estão acabando.')
+        self.assertEquals(field_label, 'subtitulo')
 
     def test_titulo_max_length(self):
         noticia = Noticia.objects.get(id=1)
