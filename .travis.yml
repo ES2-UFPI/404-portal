@@ -1,14 +1,15 @@
+dist: xenial
 language: python
 
 python:
   - "3.6"
 
-addons:
-  - postgresql: "10"
+services:
+  - postgresql
 
 branches:
   only:
-    - gabriel#35
+    - gabriel#59
     - dev
     - master
 
@@ -37,5 +38,15 @@ before_script:
   - python manage.py makemigrations
   - python manage.py migrate
 
+jobs:
+  include:
+    - stage: test
+      dist: xenial
+      addons:
+        postgresql: 10
+      before_script:
+        - psql -c "create database testdb;" -U postgres
+
+
 script:
-  - python manage.py test
+  - python manage.py test backend
