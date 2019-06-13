@@ -4,7 +4,7 @@ language: python
 python:
   - "3.6"
 
-addons:
+services:
   - postgresql
 
 branches:
@@ -27,13 +27,10 @@ before_script:
   - echo "DB_PASSWORD =$DB_PASSWORD" >> .env
   - echo "DB_HOST = 'localhost' " >> .env
   - echo "DB_PORT = '' " >> .env
-
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database travis_ci_test;' -U postgres
   - python manage.py makemigrations
   - python manage.py migrate
-  
-test:
-  adapter: postgresql
-  database: travis_ci_test
 
 script:
   - python manage.py test backend
