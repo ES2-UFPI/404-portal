@@ -5,7 +5,7 @@ python:
   - "3.6"
 
 addons:
-  - postgresql: "10"
+  - postgresql
 
 branches:
   only:
@@ -30,6 +30,10 @@ before_script:
 
   - python manage.py makemigrations
   - python manage.py migrate
+  
+test:
+  adapter: postgresql
+  database: travis_ci_test
 
 script:
   - python manage.py test backend
