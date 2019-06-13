@@ -4,8 +4,8 @@ language: python
 python:
   - "3.6"
 
-addons:
-  - postgresql: "10"
+services:
+  - postgresql
 
 branches:
   only:
@@ -27,7 +27,7 @@ before_script:
   - echo "DB_PASSWORD =$DB_PASSWORD" >> .env
   - echo "DB_HOST = 'localhost' " >> .env
   - echo "DB_PORT = '' " >> .env
-  - brew services restart postgresql
+  - sudo /etc/init.d/postgresql restart
   - psql --version
   - psql -c "CREATE DATABASE portal;" -U postgres
   - psql -c "CREATE USER gag PASSWORD '$DB_PASSWORD';" -U postgres
