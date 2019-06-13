@@ -27,7 +27,7 @@ before_script:
   - echo "DB_PASSWORD =$DB_PASSWORD" >> .env
   - echo "DB_HOST = 'localhost' " >> .env
   - echo "DB_PORT = '' " >> .env
-  - sudo /etc/init.d/postgresql restart
+
   - psql --version
   - psql -c "CREATE DATABASE portal;" -U postgres
   - psql -c "CREATE USER gag PASSWORD '$DB_PASSWORD';" -U postgres
@@ -37,6 +37,16 @@ before_script:
 
   - python manage.py makemigrations
   - python manage.py migrate
+
+jobs:
+  include:
+    - stage: test
+      dist: xenial
+      addons:
+        postgresql: 10
+      before_script:
+        - psql -c "create database testdb;" -U postgres
+
 
 script:
   - python manage.py test
