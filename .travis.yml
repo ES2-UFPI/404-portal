@@ -9,7 +9,7 @@ addons:
 
 branches:
   only:
-    - gabriel#35
+    - gabriel#59
     - dev
     - master
 
@@ -27,7 +27,7 @@ before_script:
   - echo "DB_PASSWORD =$DB_PASSWORD" >> .env
   - echo "DB_HOST = 'localhost' " >> .env
   - echo "DB_PORT = '' " >> .env
-
+  - brew services restart postgresql
   - psql --version
   - psql -c "CREATE DATABASE portal;" -U postgres
   - psql -c "CREATE USER gag PASSWORD '$DB_PASSWORD';" -U postgres
