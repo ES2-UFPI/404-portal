@@ -4,12 +4,12 @@ language: python
 python:
   - "3.6"
 
-services:
-  - postgresql
+addons:
+  - postgresql: "10"
 
 branches:
   only:
-    - gabriel#59
+    - gabriel#35
     - dev
     - master
 
@@ -27,10 +27,16 @@ before_script:
   - echo "DB_PASSWORD =$DB_PASSWORD" >> .env
   - echo "DB_HOST = 'localhost' " >> .env
   - echo "DB_PORT = '' " >> .env
-  - rm /usr/local/var/postgres/postmaster.pid
-  - psql -c 'create database travis_ci_test;' -U postgres
+
+  - psql --version
+  - psql -c "CREATE DATABASE portal;" -U postgres
+  - psql -c "CREATE USER gag PASSWORD '$DB_PASSWORD';" -U postgres
+  - psql -c "ALTER USER gag CREATEDB;" -U postgres
+  - psql -c "GRANT ALL PRIVILEGES on DATABASE portal to gag;" -U postgres
+  - "sh -e /etc/init.d/xvfb start"
+
   - python manage.py makemigrations
   - python manage.py migrate
 
 script:
-  - python manage.py test backend
+  - python manage.py test
