@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load bootstrap4 %}
 {% block content %}
 
 {% if form.errors %}
@@ -15,23 +15,19 @@
     {% endif %}
 {% endif %}
 
+<h1 class="title">Login</h1>
+
+<div class="container">
 <form method="post" action="{% url 'core:login' %}">
     {% csrf_token %}
-    <table>
-    <tr>
-        <td>{{ form.username.label_tag }}</td>
-        <td>{{ form.username }}</td>
-    </tr>
-    <tr>
-        <td>{{ form.password.label_tag }}</td>
-        <td>{{ form.password }}</td>
-    </tr>
-    </table>
+    {% for field in form %}
+        {% bootstrap_field field %}
+    {% endfor %}
 
-    <input type="submit" value="login">
+    <center><button type="submit" class="btn btn-warning">Login</button></center>
     <input type="hidden" name="next" value="{% url 'core:home' %}">
 </form>
 
 <p><a href="{% url 'usuarios:cadastrar' %}">Novo por aqui? Crie uma conta!</a></p>
-
+</div>
 {% endblock %}
