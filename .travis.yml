@@ -49,4 +49,4 @@ jobs:
 
 
 script:
-  - python manage.py test backend
+  - python manage.py test
