@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load bootstrap4 %}
+{% block content %}
 <h1 class="title">Usuário</h1>
 <div class="container">
   <form enctype="multipart/form-data" method="post">
@@ -26,10 +26,7 @@
       </div>
     {% endfor %}
 
-    <div class="form-group">
-      <button type="submit" class="btn btn-success">
-        <span class="glyphicon glyphicon-ok"></span>Salvar</button>
-    </div>
+    <center><button type="submit" class="btn btn-warning">Login</button></center>
   </form>
 </div>
 {% endblock %}
