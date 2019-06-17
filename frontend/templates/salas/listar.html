@@ -15,8 +15,10 @@
     {% else %}
       <p class="card-text">Sala Disponível</p>
     {% endif %}
-    <a href="{% url 'salas:editar' id=sala.id %}" class="btn btn-warning">Editar</a>
-    <a href="{% url 'salas:remover' id=sala.id %}" class="btn btn-warning">Remover</a>
+    {% if pessoa.tipo == 'Coordenador' %}
+      <a href="{% url 'salas:editar' id=sala.id %}" class="btn btn-warning">Editar</a>
+      <a href="{% url 'salas:remover' id=sala.id %}" class="btn btn-warning">Remover</a>
+    {% endif %}
   </div>
 </div>
 {% endfor %}

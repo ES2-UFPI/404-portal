@@ -23,10 +23,12 @@
     {% else %}
       <p class="card-text">Pendente</p>
     {% endif %}
-    <a href="{% url 'reservas:avaliar' id=reserva.id %}" class="btn btn-warning">Avaliar</a>
     <a href="{% url 'reservas:visualizar' id=reserva.id %}" class="btn btn-warning">Ver Reserva</a>
-    <a href="{% url 'reservas:editar' id=reserva.id %}" class="btn btn-warning">Editar</a>
-    <a href="{% url 'reservas:remover' id=reserva.id %}" class="btn btn-warning">Remover</a>
+    {% if pessoa.tipo == 'Coordenador' %}
+      <a href="{% url 'reservas:avaliar' id=reserva.id %}" class="btn btn-warning">Avaliar</a>
+      <a href="{% url 'reservas:editar' id=reserva.id %}" class="btn btn-warning">Editar</a>
+      <a href="{% url 'reservas:remover' id=reserva.id %}" class="btn btn-warning">Remover</a>
+    {% endif %}
   </div>
 </div>
 {% endfor %}
