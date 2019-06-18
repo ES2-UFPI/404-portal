@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-<div style="text-align:center; margin: 0px 0 10 0px;">
-    <a href = "{% url 'user:cadastrar' %}">Novo Usuário</a>
-</div>
+<a href = "{% url 'usuarios:cadastrar' %}">
+  <center><button type="button" class="btn btn-warning btn-lg btn-block">Novo Usuário</button></center>
+</a>
 
 {% for user in users %}
-<h2><a href = "{% url 'user:visualizar' id=user.id %}">{{ user.first_name }} {{ user.last_name }}</a></h2>
-    <p>{{ user.username }}</p>
-    <p>{{ user.email }}</p>
-
-    <a href = "{% url 'user:remover' id=user.id %}">Remover</a>
+<div class="card text-center">
+  <div class="card-body">
+    <a href = "{% url 'usuarios:visualizar' id=user.id %}"><h5 class="card-title">{{ user.username }}</h5></a>
+    <p class="card-text">{{ user.email }}</p>
+    <a href="{% url 'usuarios:remover' id=user.id %}" class="btn btn-warning">Remover</a>
+  </div>
+</div>
 {% endfor %}
-
 {% endblock %}

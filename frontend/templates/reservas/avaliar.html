@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
-<h2>Avaliar reserva</h2>
-<form method = "POST">
+{% load bootstrap4 %}
+<h1 class="title">Avaliar reserva</h1>
+<div class="container">
+  <form enctype="multipart/form-data" method="post">
     {% csrf_token %}
-    Aceitar: <input type="checkbox" name="aceita" id="aceita">
-    Comentario: <input type="text" name="comentario" id="comentario">
-    
-    <button>Salvar</button>
-</form>
-
+    <center><button type="submit" class="btn btn-warning">Salvar</button></center>
+    <div class="row">
+      <div class="col-lg-9 form-center">
+        {% for field in form.visible_fields %}
+        {% bootstrap_field field %}
+        {% endfor %}
+      </div>
+    </div>
+  </form>
+</div>
 {% endblock %}

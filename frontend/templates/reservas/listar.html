@@ -1,32 +1,33 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-<div style="text-align:center; margin: 0px 0 10 0px;">
-    <a href = "{% url 'reservas:cadastrar' %}">Nova Reserva</a>
-</div>
+<a href = "{% url 'reservas:cadastrar' %}">
+  <center><button type="button" class="btn btn-warning btn-lg btn-block">Nova Reserva</button></center>
+</a>
 
 {% for reserva in reservas %}
-    <h2><a href = "">{{ reserva.laboratorio.nome }}</a></h2>
-    <p>Solicitante: {{ reserva.solicitante }}</p>
-    <p>Justificativa: {{ reserva.justificativa }}</p>
-    
+<div class="card text-center">
+  <div class="card-body">
+    <a href = "{% url 'reservas:visualizar' id=reserva.id %}"><h4 class="card-title">Hora da Reserva: {{ reserva.data_hora_reserva }}</h4></a>
+    <p class="card-text">Laboratório: {{ reserva.laboratorio.nome }}</p>
+    <p class="card-text">Sala: {{ reserva.sala.nome }}</p>
+    <p class="card-text">Solicitante: {{ reserva.solicitante }}</p>
+    <p class="card-text">Justificativa: {{ reserva.justificativa }}</p>
     {% if reserva.avaliada %}
-        {% if reserva.aceita %}
-            <p>Aceita por: {{reserva.avaliada_por}}</p>
-            <p>Comentario: {{reserva.comentario}}</p>
-        {% else %}
-            <p>Recusada por: {{reserva.avaliada_por}}</p>
-            <p>Comentario: {{reserva.comentario}}</p>
-        {% endif %}
+      {% if reserva.aceita %}
+        <p class="card-text">Aceita por: {{reserva.avaliada_por}}</p>
+      {% else %}
+        <p class="card-text">Recusada por: {{reserva.avaliada_por}}</p>
+      {% endif %}
+      <p class="card-text">Comentario: {{reserva.comentario}}</p>
     {% else %}
-        <p>Pendente</p>
+      <p class="card-text">Pendente</p>
     {% endif %}
-    
-    <a href = "{% url 'reservas:avaliar' id=reserva.id %}">Avaliar</a>
-    <a href = "{% url 'reservas:visualizar' id=reserva.id %}">Ver Reserva</a>
-    <a href = "{% url 'reservas:editar' id=reserva.id %}">Editar</a>
-    <a href = "{% url 'reservas:remover' id=reserva.id %}">Remover</a>
+    <a href="{% url 'reservas:avaliar' id=reserva.id %}" class="btn btn-warning">Avaliar</a>
+    <a href="{% url 'reservas:visualizar' id=reserva.id %}" class="btn btn-warning">Ver Reserva</a>
+    <a href="{% url 'reservas:editar' id=reserva.id %}" class="btn btn-warning">Editar</a>
+    <a href="{% url 'reservas:remover' id=reserva.id %}" class="btn btn-warning">Remover</a>
+  </div>
+</div>
 {% endfor %}
-
 {% endblock %}

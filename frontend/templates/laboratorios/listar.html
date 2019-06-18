@@ -1,24 +1,24 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-<div style="text-align:center; margin: 0px 0 10 0px;">
-    <a href = "{% url 'laboratorios:cadastrar' %}">Novo Laboratório</a>
-</div>
+<a href = "{% url 'laboratorios:cadastrar' %}">
+  <center><button type="button" class="btn btn-warning btn-lg btn-block">Novo Laboratório</button></center>
+</a>
 
 {% for lab in laboratorios %}
-    <h2><a href = "{% url 'laboratorios:visualizar' id=lab.id%} ">{{ lab.nome }}</a></h2>
-    <p>{{ lab.capacidade }}</p>
-    <p>{{ lab.responsavel }}</p>
-    
+<div class="card text-center">
+  <div class="card-body">
+    <a href = "{% url 'laboratorios:visualizar' id=lab.id%}"><h4 class="card-title">{{ lab.nome }}</h4></a>
+    <p class="card-text">Capacidade: {{ lab.capacidade }}</p>
+    <p class="card-text">Responsável: {{ lab.responsavel }}</p>
     {% if lab.reservado %}
-        <p>Reservado por: {{lab.reservado_por}}</p>
+      <p class="card-text">Reservado por: {{lab.reservado_por}}</p>
     {% else %}
-        <p>Livre</p>
+      <p class="card-text">Laboratório Disponível</p>
     {% endif %}
-    
-    <a href = "{% url 'laboratorios:editar' id=lab.id %}">Editar</a>
-    <a href = "{% url 'laboratorios:remover' id=lab.id %}">Remover</a>
+    <a href="{% url 'laboratorios:editar' id=lab.id %}" class="btn btn-warning">Editar</a>
+    <a href="{% url 'laboratorios:remover' id=lab.id %}" class="btn btn-warning">Remover</a>
+  </div>
+</div>
 {% endfor %}
-
 {% endblock %}

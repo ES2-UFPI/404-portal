@@ -3,6 +3,6 @@ from .models import Evento
 
 
 class EventoForm(ModelForm):
-    class Meta:
-        model = Evento
-        exclude = ('data_publicacao',)
+  class Meta:
+    model = Evento
+    exclude = ('data_publicacao',)

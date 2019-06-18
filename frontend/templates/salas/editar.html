@@ -1,12 +1,48 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
-<form method = "POST">
+{% load bootstrap4 %}
+<h1 class="title">Sala</h1>
+<div class="container">
+  <form enctype="multipart/form-data" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    
-    <button>Salvar</button>
-</form>
+    <center><button type="submit" class="btn btn-warning">Salvar</button></center>
+    <div class="row">
+      <div class="col-lg-9 form-center">
+        <h3 class="title">Informações de Sala</h3>
+        {% for field in form.visible_fields %}
+        {% bootstrap_field field %}
+        {% endfor %}
+      </div>
+    </div>
+  </form>
+  <div id="map"></div>
+</div>
+
+<style>
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+  </style>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDU9RNIAWlhxNE5sixMutrwcyxGBU4z9Bs"></script>
+  <script>
+    function initialize() {
+      var ufpi = { lat: -5.058718, lng: -42.794962 };
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: ufpi
+      });
+      google.maps.event.addListener(map, 'click', function(event) {
+        addMarker(event.latLng, map);
+      });
+    }
+    function addMarker(location, map) {
+      var marker = new google.maps.Marker({
+        position: location,
+        map: map
+      });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
 
 {% endblock %}

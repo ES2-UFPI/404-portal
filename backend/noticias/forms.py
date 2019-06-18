@@ -3,6 +3,6 @@ from .models import Noticia
 
 
 class NoticiaForm(ModelForm):
-    class Meta:
-        model = Noticia
-        exclude = ('data_publicacao',)
+  class Meta:
+    model = Noticia
+    exclude = ('data_publicacao',)
