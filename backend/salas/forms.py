@@ -6,6 +6,6 @@ class SalaForm(ModelForm):
 
 	class Meta:
 	    model = Sala
-	    fields = ('numero', 'capacidade', 'reservada', 'reservada_por')
+	    fields = ('numero', 'capacidade', 'reservada', 'reservada_por','latitude','longitude')
 
 
