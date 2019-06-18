@@ -8,7 +8,9 @@
   <div class="card-body">
     <h5 class="card-title">{{ portal.universidade }}</h5>
     <p class="card-text">{{ portal.departamento }}</p>
-    <a href="{% url 'core:editar' id=portal.id %}" class="btn btn-warning">Editar</a>
+    {% if pessoa.tipo == 'Coordenador' %}
+      <a href="{% url 'core:editar' id=portal.id %}" class="btn btn-warning">Editar</a>
+    {% endif %}
   </div>
 </div>
 {% endfor %}

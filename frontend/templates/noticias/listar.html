@@ -11,8 +11,10 @@
     <a href = "{% url 'noticias:visualizar' id=noticia.id %}"><h4 class="card-title">{{ noticia.titulo }}</h4></a>
     <p class="card-text">{{ noticia.subtitulo }}</p>
     <p class="card-text">{{ noticia.data_criacao }}</p>
-    <a href="{% url 'noticias:editar' id=noticia.id %}" class="btn btn-warning">Editar</a>
-    <a href="{% url 'noticias:remover' id=noticia.id %}" class="btn btn-warning">Remover</a>
+    {% if pessoa.tipo == 'Coordenador' %}
+      <a href="{% url 'noticias:editar' id=noticia.id %}" class="btn btn-warning">Editar</a>
+      <a href="{% url 'noticias:remover' id=noticia.id %}" class="btn btn-warning">Remover</a>
+    {% endif %}
   </div>
 </div>
 {% endfor %}
