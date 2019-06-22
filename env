@@ -1,0 +1,7 @@
+SECRET_KEY = 'nj=nmexiu5f0%_4w9oavp*eq+7@8#_2tze0#(ho^7k!i)jn0tm'
+
+DB_NAME = 'portal'
+DB_USER = 'felipe'
+DB_PASSWORD = 'senhafacil'
+DB_HOST = 'localhost'
+DB_PORT = ''
